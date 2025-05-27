@@ -5,7 +5,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        vol=["a","e","i","o","u"]
+        vol="aeiou"
         u={}
         c={}
         for i in s:
