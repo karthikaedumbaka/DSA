@@ -8,7 +8,7 @@ class Solution(object):
         vol="aeiou"
         u={}
         c={}
-        for i in s:
+        for i in s: 
             if i in vol:
                 u[i]=+u.get(i,0)+1
             else:
