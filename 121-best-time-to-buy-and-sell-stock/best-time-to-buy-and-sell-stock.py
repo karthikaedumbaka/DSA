@@ -13,4 +13,6 @@ class Solution(object):
                 max_profit=p-min_number
 
         return max_profit
+        # time O(n)
+        # space O(1)
         
