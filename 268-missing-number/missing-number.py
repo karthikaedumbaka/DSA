@@ -4,4 +4,7 @@ class Solution:
         m= (n*(n +1))//2
         list_sum =sum(nums)
         return m-list_sum
+
+        #time O(n)
+        #space O(1)
         
