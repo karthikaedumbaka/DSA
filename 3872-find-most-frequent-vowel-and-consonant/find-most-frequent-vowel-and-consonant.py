@@ -1,19 +1,44 @@
+from collections import Counter
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        #BF
+        # vowels=["a","e","i","o","u"]
+        # vowels_freq=dict()
+        # consonant_freq=dict()
+        # for i in s:
+        #     if i in vowels:
+        #         if i in vowels_freq:
+        #             # print(i)
+        #             vowels_freq[i]+=1
+        #         else:
+        #             vowels_freq[i]=1
+        #     else:
+        #         if i in consonant_freq:
+        #             # print(i)
+        #             consonant_freq[i]+=1
+        #         else:
+        #             consonant_freq[i]=1
+        # # print(vowels_freq.values())
+        # # print(consonant_freq.values())
+        # vowels_max=max(vowels_freq.values())  if vowels_freq else 0
+        # consonant_max=max(consonant_freq.values())  if consonant_freq else 0
 
-class Solution(object):
-    def maxFreqSum(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        vol="aeiou"
-        u={}
-        c={}
-        for i in s: 
-            if i in vol:
-                u[i]=+u.get(i,0)+1
+        # return vowels_max + consonant_max
+        vowels=["a","e","i","o","u"]
+        string_freq=Counter(s)
+        vowels_max=0
+        consonant_max=0
+        for i in s:
+            if i in vowels:
+                if string_freq[i] > vowels_max:
+                    vowels_max=string_freq[i]
             else:
-                c[i]=+c.get(i,0)+1
-        max_vowel = max(u.values()) if u else 0
-        max_consonant = max(c.values()) if c else 0
+                if string_freq[i] > consonant_max:
+                    consonant_max=string_freq[i]
+        # print(vowels_max)
+        # print(consonant_max)
+        return  (vowels_max + consonant_max)
 
-        return max_vowel+max_consonant
+        # time O(n)
+        # space O(n)
+
