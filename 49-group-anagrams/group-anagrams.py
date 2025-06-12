@@ -10,4 +10,7 @@ class Solution:
             else:
                 d[k]=[s]
         return list(d.values())
+
+        # time O(n)
+        # space O(n)
         
