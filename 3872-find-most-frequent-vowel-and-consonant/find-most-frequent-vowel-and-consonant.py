@@ -24,7 +24,7 @@ class Solution:
         # consonant_max=max(consonant_freq.values())  if consonant_freq else 0
 
         # return vowels_max + consonant_max
-        vowels=["a","e","i","o","u"]
+        vowels="aeiou"
         string_freq=Counter(s)
         vowels_max=0
         consonant_max=0
