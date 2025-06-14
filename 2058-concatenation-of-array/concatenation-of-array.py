@@ -7,4 +7,7 @@ class Solution:
             output[i+n]=values
         return output
 
+        # big O(n)
+        # space O(n)
+
         
