@@ -20,4 +20,8 @@ def binary_sreach(nums,target, l , r, first_occ):
 class Solution(object):
     def searchRange(self, nums, target):
         return [binary_sreach(nums,target,0,len(nums)-1,True),binary_sreach(nums,target,0,len(nums)-1,False)]
+
+
+# Time O(log n)
+# Space O(1)
         
