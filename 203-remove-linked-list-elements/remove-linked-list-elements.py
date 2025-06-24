@@ -15,4 +15,6 @@ class Solution:
                 curr = curr.next
         return dummy.next
 
-        
+    # time O(n)
+    # space O(1)
+
