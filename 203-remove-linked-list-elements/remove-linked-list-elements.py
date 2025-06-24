@@ -14,3 +14,5 @@ class Solution:
             else:
                 curr = curr.next
         return dummy.next
+
+        
