@@ -12,5 +12,7 @@ class Solution:
                     ans[i] = stk[-1]
             stk.append(nums[i%n])
         return ans
+
+        #time 0(n)
         
         
