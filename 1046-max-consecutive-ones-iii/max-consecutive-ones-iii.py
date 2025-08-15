@@ -28,7 +28,7 @@ class Solution:
                 zeros += 1
                 
             # Contract window from the left if too many zeros
-            while zeros > k:
+            if zeros > k:
                 if nums[left] == 0:
                     zeros -= 1
                 left += 1
