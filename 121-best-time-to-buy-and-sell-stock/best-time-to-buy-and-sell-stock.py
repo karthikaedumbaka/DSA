@@ -1,5 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        # by using Sliding window
         l,r=0,1
         profit=0
         while r < len(prices):
@@ -9,3 +10,6 @@ class Solution:
                 l=r
             r+=1
         return profit
+
+        # time O(n)
+        # space O(1)
