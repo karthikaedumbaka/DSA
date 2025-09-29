@@ -6,6 +6,5 @@ class Solution:
         for i in range(len(nums)//2):
             result_arr.append(nums[i])
             result_arr.append(nums[j])
-            i+=1
             j+=1
         return result_arr
