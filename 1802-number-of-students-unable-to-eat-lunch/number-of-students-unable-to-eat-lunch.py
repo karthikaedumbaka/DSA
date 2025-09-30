@@ -10,5 +10,20 @@ class Solution:
             else:
                 return res
         return res
-        
-        
+        # time O(n)
+        # space O(1)
+'''Problem Statement (simplified)
+
+You have students in a queue, each with a preferred sandwich type (0 or 1).
+
+You have a stack of sandwiches, each also 0 or 1.
+
+Students try to take the sandwich on top of the stack:
+
+If the sandwich matches their preference, they take it and leave the queue.
+
+If not, the student moves to the end of the queue.
+
+The process stops when none of the students in the queue want the top sandwich.
+
+Goal: return the number of students unable to eat.'''
