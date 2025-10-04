@@ -50,5 +50,8 @@ class Solution:
             i+=1
         return nums
 
+        #time 0(n)
+        #space 0(1)
+
 
     
