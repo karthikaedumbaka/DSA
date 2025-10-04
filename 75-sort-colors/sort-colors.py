@@ -36,7 +36,7 @@ class Solution:
     #     for i in range(len(nums)):
     #         nums[i] = sorted_nums[i]
     #     # time n(longn)
-    #     # space o(1)
+    #     # space o(n)
     def sortColors(self, nums: List[int]) -> None:
         l,i,r=0,0,len(nums)-1
         while i<=r:
