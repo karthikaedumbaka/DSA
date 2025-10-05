@@ -18,3 +18,7 @@ class Solution(object):
         if root.val > val:
             return self.searchBST(root.left,val)
         return self.searchBST(root.right,val)
+
+
+        #time O(n)
+        #space O(H)
