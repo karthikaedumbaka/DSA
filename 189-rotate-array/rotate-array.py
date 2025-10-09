@@ -9,4 +9,5 @@ class Solution(object):
         k = k % n  # Handle cases where k > n
         nums[:] = nums[-k:] + nums[:-k]
         return nums
-        
+        # time o(n)
+        #space O(1)
