@@ -1,36 +1,38 @@
-starting_point_for_right=0 
+from typing import List
 
-def binary_sreach(nums,target, l , r, first_occ):
-    l=0
-    r=len(nums)-1
-    ans=-1
-    while l<=r:
-        m = (l+r)//2
-        if nums[m] == target:
-            if ans==-1:
-                starting_point_for_right=m
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        def findFirst(nums, target):
+            l, r = 0, len(nums) - 1
+            first = -1
+            while l <= r:
+                mid = (l + r) // 2
+                if nums[mid] == target:
+                    first = mid
+                    r = mid - 1  # move left to find earlier occurrence
+                elif nums[mid] < target:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+            return first
 
-            ans = m
-            if first_occ:
-                r=m-1
-            else:
-                l=m+1
-        elif nums[m] < target:
-            l=m+1
-        else:
-            r=m-1
-    return ans
+        def findLast(nums, target):
+            l, r = 0, len(nums) - 1
+            last = -1
+            while l <= r:
+                mid = (l + r) // 2
+                if nums[mid] == target:
+                    last = mid
+                    l = mid + 1  # move right to find later occurrence
+                elif nums[mid] < target:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+            return last
 
+        if not nums:
+            return [-1, -1]
 
-class Solution(object):
-    def searchRange(self, nums, target):
-        ans_lef=binary_sreach(nums,target,0,len(nums)-1,True)
-        if ans_lef==-1:
-            return [-1,-1]
-
-        return [ans_lef,binary_sreach(nums,target,starting_point_for_right,len(nums)-1,False)]
-
-
-# Time O(log n)
-# Space O(1)
-        
+        first = findFirst(nums, target)
+        last = findLast(nums, target)
+        return [first, last]
