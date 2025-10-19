@@ -12,13 +12,10 @@ class Solution(object):
         :type val: int
         :rtype: Optional[TreeNode]
         """
-
-        if (root is None) or  (root.val == val):
-            return root
-        if root.val > val:
-            return self.searchBST(root.left,val)
-        return self.searchBST(root.right,val)
+        if not root or root.val == val:
+            return root 
+        return self.searchBST(root.left,val) if root.val > val else self.searchBST(root.right,val)
 
 
-        #time O(n)
+        #time O(H)
         #space O(H)
