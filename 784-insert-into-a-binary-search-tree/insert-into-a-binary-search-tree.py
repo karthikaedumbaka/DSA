@@ -18,4 +18,7 @@ class Solution(object):
         elif val< root.val:
             root.left = self.insertIntoBST(root.left,val)
         return root
-        
+
+
+        # Time O(H) -> O(n)
+        # space O(H) -> O(n)
