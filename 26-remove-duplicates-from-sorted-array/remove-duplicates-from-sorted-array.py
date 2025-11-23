@@ -1,22 +1,10 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        # l=1
-        # for i in range(len(nums)):
-        #     if nums[i] != nums[l-1]:
-        #         nums[l] = nums[i]
-        #         l+=1
-
-        # return l
-        #time O(n)
-        # space O(1)
-
-        i=1
-        for j in range(len(nums)):
-            if nums[j] != nums[i-1]:
+        i=1 # check for length of unique number lenght
+        for j in range(1,len(nums)):
+            if nums[j] != nums[j-1]:   # checking for defense
                 nums[i] = nums[j]
                 i+=1
-        return i
-                
-            
-            
-        
+        return i  
+        # time O(n)
+        # space O(1)
