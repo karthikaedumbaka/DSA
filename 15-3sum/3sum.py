@@ -13,6 +13,8 @@ class Solution:
 
                         
         # return [ i for i in ans ]
+
+        #==============    with two pointer    =============
         ans = set()
         nums= sorted(nums)
         for i in range(len(nums)):
@@ -28,6 +30,23 @@ class Solution:
                 else:
                     j+=1
         return [list(x) for x in ans]
+
+
+        # ============= with hashset ===========
+
+        # ans = set()
+        # s= set()
+
+        # # logic is k < i< j 
+        # for i in range(1,len(nums)):
+        #     s.add(nums[i-1])
+        #     for j in range(i+1,len(nums)):
+        #         if -(nums[i]+ nums[j] ) in s :
+        #             ans.add(tuple(sorted([nums[i],nums[j],-(nums[i]+nums[j])])))
+        # return [list(x) for x in ans]
+
+
+
 
 
 
