@@ -28,7 +28,7 @@ class Solution:
         #         R = mid -1
         # return [min_num,max_num]
 
-        #bF
+        #
         def min_max(is_min:bool) -> int:
             n=len(nums)
             L=0
