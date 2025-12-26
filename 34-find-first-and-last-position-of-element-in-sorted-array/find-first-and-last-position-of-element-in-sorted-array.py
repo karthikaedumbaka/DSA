@@ -1,38 +1,29 @@
-from typing import List
-
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        def findFirst(nums, target):
-            l, r = 0, len(nums) - 1
-            first = -1
-            while l <= r:
-                mid = (l + r) // 2
-                if nums[mid] == target:
-                    first = mid
-                    r = mid - 1  # move left to find earlier occurrence
-                elif nums[mid] < target:
-                    l = mid + 1
-                else:
-                    r = mid - 1
-            return first
-
-        def findLast(nums, target):
-            l, r = 0, len(nums) - 1
-            last = -1
-            while l <= r:
-                mid = (l + r) // 2
-                if nums[mid] == target:
-                    last = mid
-                    l = mid + 1  # move right to find later occurrence
-                elif nums[mid] < target:
-                    l = mid + 1
-                else:
-                    r = mid - 1
-            return last
-
-        if not nums:
-            return [-1, -1]
-
-        first = findFirst(nums, target)
-        last = findLast(nums, target)
-        return [first, last]
+        if len(nums) == 0 :
+            return [-1,-1]
+        min_num = -1
+        max_num = -1
+        L = 0 
+        R = len(nums)-1
+        while L <=R:
+            mid = (L+R)//2
+            if nums[mid] == target:
+                min_num = mid
+                R-=1
+            elif nums[mid] <target:
+                L+=1
+            else:
+                R -=1
+        L = 0 
+        R = len(nums)-1                
+        while L <=R:
+            mid = (L+R)//2
+            if nums[mid] == target:
+                max_num = mid
+                L+=1
+            elif nums[mid] <target:
+                L+=1
+            else:
+                R -=1
+        return [min_num,max_num]
