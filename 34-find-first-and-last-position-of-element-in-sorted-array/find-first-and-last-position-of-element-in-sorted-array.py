@@ -10,20 +10,20 @@ class Solution:
             mid = (L+R)//2
             if nums[mid] == target:
                 min_num = mid
-                R-=1
+                R = mid -1
             elif nums[mid] <target:
-                L+=1
+                L= mid +1
             else:
-                R -=1
+                R = mid -1
         L = 0 
         R = len(nums)-1                
         while L <=R:
             mid = (L+R)//2
             if nums[mid] == target:
                 max_num = mid
-                L+=1
+                L= mid +1
             elif nums[mid] <target:
-                L+=1
+                L= mid +1
             else:
-                R -=1
+                R = mid -1
         return [min_num,max_num]
