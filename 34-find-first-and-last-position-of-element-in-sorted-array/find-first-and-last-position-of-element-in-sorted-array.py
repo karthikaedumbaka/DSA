@@ -1,29 +1,59 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        if len(nums) == 0 :
-            return [-1,-1]
-        min_num = -1
-        max_num = -1
-        L = 0 
-        R = len(nums)-1
-        while L <=R:
-            mid = (L+R)//2
-            if nums[mid] == target:
-                min_num = mid
-                R = mid -1
-            elif nums[mid] <target:
-                L= mid +1
-            else:
-                R = mid -1
-        L = 0 
-        R = len(nums)-1                
-        while L <=R:
-            mid = (L+R)//2
-            if nums[mid] == target:
-                max_num = mid
-                L= mid +1
-            elif nums[mid] <target:
-                L= mid +1
-            else:
-                R = mid -1
-        return [min_num,max_num]
+        # if len(nums) == 0 :
+        #     return [-1,-1]
+        # min_num = -1
+        # max_num = -1
+        # L = 0 
+        # R = len(nums)-1
+        # while L <=R:
+        #     mid = (L+R)//2
+        #     if nums[mid] == target:
+        #         min_num = mid
+        #         R = mid -1
+        #     elif nums[mid] <target:
+        #         L= mid +1
+        #     else:
+        #         R = mid -1
+        # L = 0 
+        # R = len(nums)-1                
+        # while L <=R:
+        #     mid = (L+R)//2
+        #     if nums[mid] == target:
+        #         max_num = mid
+        #         L= mid +1
+        #     elif nums[mid] <target:
+        #         L= mid +1
+        #     else:
+        #         R = mid -1
+        # return [min_num,max_num]
+
+        #bF
+        def min_max(is_min:bool) -> int:
+            n=len(nums)
+            L=0
+            R=n-1
+            ans =-1
+            while L<=R:
+                mid = (L+R) //2
+                if nums[mid] == target:
+                    ans = mid
+                    if is_min :
+                        
+                        R =mid -1
+                    else:
+                        L = mid +1
+                    
+                elif nums[mid] < target:
+                    L=mid+1
+                else:
+                    R=mid-1
+            return ans
+        return [min_max(True),min_max(False)]
+
+
+
+        # time O(log n) + O(log n) = O(log n)
+        # space O(1)
+
+                    
