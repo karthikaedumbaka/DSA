@@ -1,5 +1,13 @@
 class Solution:
     def searchMatrix(self, matrix, target):
+        # #bf 
+        # for i in range(len(matrix)):
+        #     for j in range(len(matrix[i])):
+        #         if matrix[i][j] == target:
+        #             return True
+        # return False
+        # # time O(n*m)
+        # # space O(1)
         row = -1
         t = 0
         b = len(matrix) -1
