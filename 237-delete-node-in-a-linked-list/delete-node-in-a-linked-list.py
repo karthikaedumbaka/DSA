@@ -12,4 +12,5 @@ class Solution:
         """
         node.val =node.next.val
         node.next = node.next.next
-        
+        # time O(1)
+        #space O(1)
