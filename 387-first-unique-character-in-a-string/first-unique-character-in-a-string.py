@@ -1,12 +1,15 @@
 from collections import Counter
-import atexit
-atexit.register(lambda: open("display_runtime.txt", "w").write("0"))
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        f=Counter(s)
-        for index , value in enumerate(s):
-            if f[value] ==1:
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        d = Counter(s)
+        for index, val in enumerate(s):
+            if d[val] ==1 :
                 return index
         return -1
+
 
         
