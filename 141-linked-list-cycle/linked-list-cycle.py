@@ -6,16 +6,28 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast=head
-        slow=head
+        # #BF 
+        # hashset = set()
+        # curr =head
+        # while curr:
+        #     if curr in hashset:
+        #         return True
+        #     else:
+        #         hashset.add(curr)
+        #     curr = curr.next
+        # return False
+        # time O(n)
+        # space O(N)
+        if head is None or head.next == None:
+            return False
+        fast = head
+        slow = head
         while fast and fast.next:
-            fast=fast.next.next
-            slow=slow.next
+            fast = fast.next.next
+            slow = slow.next
             if fast == slow:
                 return True
+            
         return False
-
-# time O(n)
-# space O(1)
-
-        
+        # time O(n)
+        # space O(1)
