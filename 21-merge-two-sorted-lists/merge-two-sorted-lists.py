@@ -31,5 +31,7 @@ class Solution(object):
         head = head.next
         return head
 
+        # time O(N+M)
+        # space O(1)
 
             
