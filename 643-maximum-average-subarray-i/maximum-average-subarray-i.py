@@ -32,5 +32,8 @@ class Solution:
             ans = max(ans,k_avg )
         return ans
 
+        # time O(n)
+        # space O(1)
+
 
     
