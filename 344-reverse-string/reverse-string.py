@@ -3,12 +3,11 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        i,j=0,len(s)-1
-        while i<j:
-            s[i],s[j]=s[j],s[i]
-            i+=1
-            j-=1
-        
+        def helper(l,r):
+            if l >=r:
+                return 
+            s[l] ,s[r] = s[r] ,s[l]
+            helper(l+1,r-1)
+        helper(0,len(s)-1)
         return s
-        # time O(n)
-        # space O(1)
+    
