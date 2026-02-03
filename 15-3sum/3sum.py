@@ -1,56 +1,20 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        #BF
-        # make 3 loops inside 
-        # ans=set()
-        # for i in range(len(nums)):
-        #     for j in range(i+1,len(nums)):
-        #         for k in range(j+1,len(nums)):
-        #             if  (nums[i] + nums[j] + nums[k] ==0) :
-        #                 ans.add(tuple(sorted([nums[i], nums[j], nums[k]])))
-
-
-
-                        
-        # return [ i for i in ans ]
-
-        #==============    with two pointer    =============
+        nums = sorted(nums)
         ans = set()
-        nums= sorted(nums)
-        for i in range(len(nums)):
+        for i in range(0,len(nums)):
             j=i+1
-            k=len(nums)-1
+            k = len(nums) -1
             while j < k:
                 if nums[i] + nums[j] + nums[k] == 0:
-                    ans.add(tuple(sorted([nums[i] , nums[j] , nums[k]])))
+                    ans.add(tuple([nums[i] , nums[j] , nums[k]]))
                     j+=1
                     k-=1
-                elif nums[i] + nums[j] + nums[k] > 0:
-                    k -=1
-                else:
+                elif nums[i] + nums[j] + nums[k] < 0:
+
                     j+=1
+                else:
+                    k-=1
         return [list(x) for x in ans]
-
-
-        # ============= with hashset ===========
-
-        # ans = set()
-        # s= set()
-
-        # # logic is k < i< j 
-        # for i in range(1,len(nums)):
-        #     s.add(nums[i-1])
-        #     for j in range(i+1,len(nums)):
-        #         if -(nums[i]+ nums[j] ) in s :
-        #             ans.add(tuple(sorted([nums[i],nums[j],-(nums[i]+nums[j])])))
-        # return [list(x) for x in ans]
-
-
-
-
-
-
-
-
 
         
