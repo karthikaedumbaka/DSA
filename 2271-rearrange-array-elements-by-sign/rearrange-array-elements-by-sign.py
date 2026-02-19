@@ -28,6 +28,8 @@ class Solution:
                 positive_idx +=2
         return ans
                 
+        # time  O(n)
+        # space O(1)
             
 
 
