@@ -21,4 +21,5 @@ class Solution:
                     result.append(matrix[i][left])
                 left +=1
         return result
-        #time
+        #time O(NxM)
+        # space O(1)
