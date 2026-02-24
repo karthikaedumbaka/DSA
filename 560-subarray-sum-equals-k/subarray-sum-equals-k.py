@@ -13,3 +13,6 @@ class Solution:
             prefix_map[prefix_sum] +=1
         
         return count
+
+        #time O(n)
+        # space O(n)
