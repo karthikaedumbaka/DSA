@@ -21,3 +21,6 @@ class Solution:
 
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         return [self.binarySearch(nums,target,True),self.binarySearch(nums,target,False)]
+
+        #time O(logn)
+        #space O(1)
