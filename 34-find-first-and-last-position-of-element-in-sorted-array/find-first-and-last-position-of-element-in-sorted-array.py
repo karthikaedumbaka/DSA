@@ -1,59 +1,23 @@
 class Solution:
+    def binarySearch(self,nums,target, first):
+        l = 0
+        r = len(nums) -1
+        ans = -1
+        while l <= r :
+            
+            mid =(l+r) //2 
+            if nums[mid] == target :
+                ans = mid
+                if first:
+                    r = mid-1
+                else :
+                    l = mid +1
+            elif nums[mid] < target :
+                l = mid  + 1
+            else :
+                r= mid - 1
+        return ans
+
+
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        # if len(nums) == 0 :
-        #     return [-1,-1]
-        # min_num = -1
-        # max_num = -1
-        # L = 0 
-        # R = len(nums)-1
-        # while L <=R:
-        #     mid = (L+R)//2
-        #     if nums[mid] == target:
-        #         min_num = mid
-        #         R = mid -1
-        #     elif nums[mid] <target:
-        #         L= mid +1
-        #     else:
-        #         R = mid -1
-        # L = 0 
-        # R = len(nums)-1                
-        # while L <=R:
-        #     mid = (L+R)//2
-        #     if nums[mid] == target:
-        #         max_num = mid
-        #         L= mid +1
-        #     elif nums[mid] <target:
-        #         L= mid +1
-        #     else:
-        #         R = mid -1
-        # return [min_num,max_num]
-
-        #
-        def min_max(is_min:bool) -> int:
-            n=len(nums)
-            L=0
-            R=n-1
-            ans =-1
-            while L<=R:
-                mid = (L+R) //2
-                if nums[mid] == target:
-                    ans = mid
-                    if is_min :
-                        
-                        R =mid -1
-                    else:
-                        L = mid +1
-                    
-                elif nums[mid] < target:
-                    L=mid+1
-                else:
-                    R=mid-1
-            return ans
-        return [min_max(True),min_max(False)]
-
-
-
-        # time O(log n) + O(log n) = O(log n)
-        # space O(1)
-
-                    
+        return [self.binarySearch(nums,target,True),self.binarySearch(nums,target,False)]
