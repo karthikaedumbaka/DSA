@@ -20,5 +20,6 @@ class Solution:
             else:
                 l =mid +1
 
-
+        # time O(log n)
+        #space (O(n))
 
