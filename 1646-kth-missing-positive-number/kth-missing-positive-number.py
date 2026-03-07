@@ -1,11 +1,23 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        missing_value = 0
-        i = 1
-        while k !=0 :
-            if i not in arr:
-                missing_value = i
-                k-=1
-            i+=1
+        # missing_value = 0
+        # i = 1
+        # while k !=0 :
+        #     if i not in arr:
+        #         missing_value = i
+        #         k-=1
+        #     i+=1
         
-        return missing_value
+        # return missing_value
+        l = 0 
+        r = len(arr)-1
+        while  l<=r:
+            mid = (l+r)//2 
+            missing = ((arr[mid]) - (mid+1))
+            if missing < k:
+                l=mid+1
+            else:
+                r=mid-1
+        return l+k
+        #time (Ologn)
+        #space O(1)
