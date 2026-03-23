@@ -10,4 +10,7 @@ class Solution:
         for i,count in sort_dic:
             result += (i*count)
         return result
+
+        # time O(n)+ KLog(K)
+        #space O(n)
         
