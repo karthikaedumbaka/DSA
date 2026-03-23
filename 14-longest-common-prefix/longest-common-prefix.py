@@ -1,19 +1,15 @@
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
-        if not strs:
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if len(strs) == 0:
             return ""
-        s=float("inf") # to get the highest possible +ve integer 
-        for i in strs:# checking every value in a string
-        # check every element string in strs if the lenght is lessthan then it will sort 
-            if len(i) < s:  
-                s=len(i)
-        for i in range(0,s):
-            for strings in strs:
-                if strings[i]!=strs[0][i]:
-                    return strings[:i]
-                
-        return strs[0][:s]
+        result = ""
+        base_word = strs[0]
+        for i in range(0,len(base_word)):
+            for word in strs[1:]:
+                if  i == len(word) or word[i] != base_word[i]:
+                    return result
+            result += base_word[i]
+        return result
+            
+            
+        
