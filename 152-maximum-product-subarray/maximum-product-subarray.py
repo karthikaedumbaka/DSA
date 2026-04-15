@@ -13,7 +13,8 @@ class Solution:
             suf *=nums[n-i-1]
             max_produxt = max(max_produxt,prf,suf)
         return max_produxt
-
+        # time O(n)
+        #space O(1)
 
 
             
