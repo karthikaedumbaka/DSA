@@ -8,6 +8,9 @@ class Solution:
         if n<=0 or n%2 !=0:
             return False
         return self.power(n // 2)
+        #time: O(log n)
+        # space O(log n)
+
         
 
         
