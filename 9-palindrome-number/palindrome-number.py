@@ -1,13 +1,11 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        temp_x =x 
-        if x < 0:
+        if x<0:
             return False
-        revNum = 0
-        while x > 0:
-            lastNum = x % 10
-            revNum = revNum *10 + lastNum
-            x = x //10 
-
-        return True if revNum == temp_x  else False 
-        
+        palindromeNumber = 0 
+        real_number = x
+        while x >0:
+            palindromeNumber *=10
+            palindromeNumber += x%10
+            x=x//10
+        return True if palindromeNumber==real_number  else False
