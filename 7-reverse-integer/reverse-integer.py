@@ -1,13 +1,15 @@
 class Solution:
     def reverse(self, x: int) -> int:
         
-        revNum = 0 
-        neg_num =   x > 0 
+        result =0
+        Find_pos = 1 if x>0 else 0
         x = abs(x)
-        while x > 0 :
-            lastNum = x % 10
-            revNum = revNum * 10 + lastNum
-            x = x // 10
-        if revNum >  2**31 - 1:
+        while x > 0:
+            result = result *10
+            result += x%10
+            x = x//10
+        if (result < (-(2**31))) or (result > ((2**31)-1)):
             return 0
-        return revNum if neg_num else  -revNum
+        return result if Find_pos else -result
+# time O(N)
+#space O(1)
