@@ -11,4 +11,7 @@ class Solution:
                 return True
         return False
 
+        # time O(n)
+        # space O(1)
+
         
