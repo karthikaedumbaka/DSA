@@ -5,4 +5,7 @@ class Solution:
             n = n & (n-1)
             ans+=1
         return ans 
+        #time  O(1)
+        #space O(n)
+
         
