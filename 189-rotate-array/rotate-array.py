@@ -1,19 +1,13 @@
-class Solution:
-    def rotate(self, nums: List[int], k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
+class Solution(object):
+    def rotate(self, nums, k):
         n = len(nums)
-        k = k%n 
-        if n < k :return
-        def helper(l,r):
-            while  l<=r:
-                nums[l],nums[r] = nums[r] ,nums[l]
-                l+=1 
-                r-=1
-        helper(0,n-1)
-        helper(0,k-1)
-        helper(k,n-1)
-        return nums
+        k = k % n
+        self.helper(nums, 0, n - 1)
+        self.helper(nums, 0, k - 1)
+        self.helper(nums, k, n - 1)
 
-        
+    def helper(self, nums, i, j):
+        while i < j:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
+            j -= 1
